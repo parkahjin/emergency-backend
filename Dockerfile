@@ -2,7 +2,7 @@
 FROM gradle:8.5-jdk21 AS build
 WORKDIR /app
 COPY . .
-RUN ./gradlew bootJar --no-daemon
+RUN chmod +x gradlew && ./gradlew bootJar --no-daemon
 
 # Run stage
 FROM eclipse-temurin:21-jre-jammy
